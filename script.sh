@@ -22,7 +22,7 @@ do
   aws ec2 start-instances --instance-ids $elem
 done
 
-#sleep 180
+sleep 180
 
 
 for elem1 in ${a[@]}
@@ -38,7 +38,7 @@ ssh -i $keyfile ubuntu@$elem2 "sudo apt-get install -y python"
 ssh -i $keyfile ubuntu@$elem2 "/usr/bin/python /home/ubuntu/$pythonfile >> pyout.txt"
 done
 
-#for elem in ${a[@]}
-#do
-#  aws ec2 stop-instances --instance-ids $elem
-#done
+for elem in ${a[@]}
+do
+  aws ec2 stop-instances --instance-ids $elem
+done
